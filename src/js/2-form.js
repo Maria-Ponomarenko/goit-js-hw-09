@@ -28,11 +28,10 @@ const savedData = localStorage.getItem("feedback-form-state");
 function fillForm() {
     if (savedData) {
         const parsedData = JSON.parse(savedData);
-        console.log(parsedData);
         formData.email = parsedData.email;
         formData.message = parsedData.message;
-        emailInput.value = formData.email;
-        messageInput.value = formData.message;
+        emailInput[0].value = formData.email;
+        messageInput[0].value = formData.message;
     }
 }
 
@@ -54,7 +53,6 @@ function handlerSubmit(event) {
     formData.message = "";
     form.reset();
 }
-
 
 
 
